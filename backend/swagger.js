@@ -7,7 +7,7 @@ const options = {
     info: {
       title: "API BPO Node",
       version: "1.0.0",
-      description: "Documentación de la API para el sistema de gestiones",
+      description: "Documentación de la API para el sistema de gestiones BPO",
     },
     servers: [
       {
