@@ -6,9 +6,24 @@ class GestionService {
   }
 
   async list(filters) {
-    // versión simple: devuelve todas (más adelante añadimos paginación y filtros)
-    const rows = await Gestion.findAll();
-    return { data: rows, total: rows.length };
+    // Tomamos page y limit desde filters, con valores por defecto
+    let page = parseInt(filters.page) || 1;
+    let limit = parseInt(filters.limit) || 10;
+    const offset = (page - 1) * limit;
+
+    // Traemos registros paginados
+    const { count, rows } = await Gestion.findAndCountAll({
+      limit,
+      offset,
+      order: [["createdAt", "DESC"]], // más recientes primero
+    });
+
+    return {
+      data: rows,
+      total: count,
+      page,
+      lastPage: Math.ceil(count / limit),
+    };
   }
 
   detail(id) {
