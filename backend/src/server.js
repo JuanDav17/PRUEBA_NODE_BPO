@@ -5,7 +5,7 @@ const app = require("./app");
 const db = require("./models");
 
 const PORT = process.env.PORT || 3000;
-const MAX_RETRIES = 40;
+const MAX_RETRIES = 80;
 let currentRetry = 0;
 
 const connectWithRetry = async () => {

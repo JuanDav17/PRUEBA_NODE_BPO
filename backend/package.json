@@ -13,7 +13,9 @@
     "express-validator": "^6.15.0",
     "joi": "^17.13.3",
     "mysql2": "^3.7.0",
-    "sequelize": "^6.35.0"
+    "sequelize": "^6.35.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "jest": "^29.0.0",
